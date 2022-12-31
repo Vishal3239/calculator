@@ -1,0 +1,127 @@
+<html>
+    <head>
+        <title>math</title>
+        <style>
+            body{
+                background-color: #627c6c;
+            }
+            h1{
+                text-shadow: 2px 2px 1px orange,4px 4px 1px blue,6px 6px 1px green,8px 8px 1px rgb(77, 52, 165);
+                font-size: 80px;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            input{
+                width: 75.5px;
+                height:80px;
+                margin-top: 5px;
+                padding: 20px;
+                border: none;
+                border-radius: 30px;
+                float: left;
+                font-size: larger;
+                box-shadow: inset -5px -5px 12px #ffffff,5px 5px 12px rgba(0,0,0,.16);
+            }
+            .div{
+                height: 100vh; 
+                align-items: center;
+                display: flex;
+                justify-content: center;
+            }
+            .div2{
+                width: 335px;
+                height: 110px;
+                background-color: #f3e3f3;
+                text-align: end;
+                font-size: 50px;
+                box-shadow:  -5px -5px 12px #ffffff,5px 5px 12px rgba(0,0,0,.16);
+                }
+            .div1{
+                background-color:#ecf0f3;
+                padding: 15px;
+                border-radius: 30px;
+                box-shadow: inset 5px 5px 12px #ffffff,5px 5px 12px rgba(0,0,0,.16);
+            }
+            .num{
+                
+                border-radius: 50%;
+                border: none;
+                margin: 5px;
+                box-shadow:  -5px -5px 12px #ffffff,5px 5px 12px rgba(0,0,0,.16);
+            }
+            .num:hover{
+                box-shadow: 0 5px 50px 0 #15f4ee inset,0 5px 50px 0 #15f4ee,
+                0 5px 50px 0 #15f4ee inset,0 5px 50px 0 #15f4ee ;
+
+            }
+            
+        </style>
+    </head>
+    <body>
+        <h1 align="center"  > <marquee behavior="alternate" scrollamount="10" direction="right"><b><font size="10"> calculator Made By Vishal</font></b></marquee></h1>
+        <div class="div">
+            
+           <div class="div1">
+            
+            <input type="text"name="answer" class="div2"class="out" placeholder="0" id="output" ><br>
+            <input class="num" onclick="Clear()" type="button"value="C"onfocus="nfocusfunction(this)"onblur="onblurfunctio(this)">
+            <input class="num"onclick="display('%')" type="button"value="%"onfocus="nfocusfunction(this)"onblur="onblurfunctio(this)">
+            <input class="num"onclick="del()"type="button"value="De"onfocus="nfocusfunction(this)"onblur="onblurfunctio(this)">
+            <input class="num"onclick="display('/')"type="button"value="/"onfocus="nfocusfunction(this)"onblur="onblurfunctio(this)"><br>
+            <input class="num"onclick="display('7')"type="button"value="7"onfocus="onfocusfunction(this)"onblur="onblurfunctio(this)">
+            <input class="num"onclick="display('8')"type="button"value="8"onfocus="onfocusfunction(this)"onblur="onblurfunctio(this)">
+            <input class="num"onclick="display('9')"type="button"value="9"onfocus="onfocusfunction(this)"onblur="onblurfunctio(this)">
+            <input class="num"onclick="display('*')"type="button"value="*"onfocus="nfocusfunction(this)"onblur="onblurfunctio(this)"><br>
+            <input class="num"onclick="display('4')"type="button"value="4"onfocus="onfocusfunction(this)"onblur="onblurfunctio(this)">
+            <input class="num"onclick="display('5')"type="button"value="5"onfocus="onfocusfunction(this)"onblur="onblurfunctio(this)">
+            <input class="num"onclick="display('6')"type="button"value="6"onfocus="onfocusfunction(this)"onblur="onblurfunctio(this)">
+            <input class="num"onclick="display('-')"type="button"value="-"onfocus="nfocusfunction(this)"onblur="onblurfunctio(this)"><br>
+            <input class="num"onclick="display('1')"type="button"value="1"onfocus="onfocusfunction(this)"onblur="onblurfunctio(this)">
+            <input class="num"onclick="display('2')"type="button"value="2"onfocus="onfocusfunction(this)"onblur="onblurfunctio(this)">
+            <input class="num"onclick="display('3')"type="button"value="3"onfocus="onfocusfunction(this)"onblur="onblurfunctio(this)">
+            <input class="num"onclick="display('+')"type="button"value="+"onfocus="nfocusfunction(this)"onblur="onblurfunctio(this)"><br>
+            <input class="num"onclick="display('0')"type="button"value="0"onfocus="onfocusfunction(this)"onblur="onblurfunctio(this)">
+            <input class="num"onclick="display('00')"type="button"value="00"onfocus="onfocusfunction(this)"onblur="onblurfunctio(this)">
+            <input class="num"onclick="display('.')"type="button"value="."onfocus="onfocusfunction(this)"onblur="onblurfunctio(this)">
+            <input class="num"onclick="calcuate()"type="button"value="="onfocus="nfocusfunction(this)"onblur="onblurfunctio(this)">
+           </div>
+        </div>
+        <script type="text/javascript">
+            let x=document.getElementById("output");
+            function display(num)
+            {
+              x.value +=num;
+            }
+            function calcuate()
+            {
+                try
+                {
+                   x.value=eval(x.value);
+                }
+                catch(err)
+                {
+                    alert("invalid");
+                }
+            }
+            function Clear()
+            {
+                x.value="";
+            }
+            function del()
+            {
+                x.value=x.value.slice(0,-1);
+            }
+            function onfocusfunction(element)
+            {
+                element.style.backgroundColor="#97eec3"
+            }
+            function onblurfunctio(element)
+            {
+                element.style.backgroundColor="";
+            }
+            function nfocusfunction(element)
+            {
+                element.style.backgroundColor="#fbb1f5"
+            }
+        </script>
+    </body>
+</html>
